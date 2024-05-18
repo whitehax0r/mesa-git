@@ -53,6 +53,8 @@ cards_amd[] = {
     {"KAVERI",                      "AMD Radeon(TM) R7 Graphics"},
     {"KABINI",                      "AMD Radeon HD 8400 / R3 Series"},
     {"BONAIRE",                     "AMD Radeon HD 8770"},
+    {"LIVERPOOL",                   "AMD Liverpool (Playstation 4)"},
+    {"GLADIUS",                     "AMD Gladius (Playstation 4)"},
     {"OLAND",                       "AMD Radeon HD 8670"},
     {"HAINAN",                      "AMD Radeon HD 8600M Series"},
     {"TAHITI",                      "AMD Radeon HD 7900 Series"},

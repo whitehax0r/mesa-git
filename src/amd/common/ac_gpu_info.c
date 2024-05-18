@@ -728,6 +728,8 @@ bool ac_query_gpu_info(int fd, void *dev_p, struct radeon_info *info,
    case FAMILY_KV:
       identify_chip2(SPECTRE, KAVERI);
       identify_chip2(SPOOKY, KAVERI);
+      identify_chip2(STARSHA, LIVERPOOL);
+	  identify_chip2(STARSHP, GLADIUS);
       identify_chip2(KALINDI, KABINI);
       identify_chip2(GODAVARI, KABINI);
       break;
@@ -937,6 +939,8 @@ bool ac_query_gpu_info(int fd, void *dev_p, struct radeon_info *info,
    case CHIP_VERDE:
    case CHIP_HAINAN:
    case CHIP_BONAIRE:
+   case CHIP_LIVERPOOL:
+   case CHIP_GLADIUS:
    case CHIP_KAVERI:
    case CHIP_ICELAND:
    case CHIP_CARRIZO:
@@ -1547,6 +1551,8 @@ int ac_get_gs_table_depth(enum chip_class chip_class, enum radeon_family family)
    case CHIP_PITCAIRN:
    case CHIP_VERDE:
    case CHIP_BONAIRE:
+   case CHIP_LIVERPOOL:
+   case CHIP_GLADIUS:
    case CHIP_HAWAII:
    case CHIP_TONGA:
    case CHIP_FIJI:
@@ -1597,6 +1603,14 @@ void ac_get_raster_config(struct radeon_info *info, uint32_t *raster_config_p,
       raster_config = 0x16000012;
       raster_config_1 = 0x00000000;
       break;
+   case CHIP_LIVERPOOL:
+      raster_config = 0x2a00161a;
+	  raster_config_1 = 0x00000000;
+	  break;
+   case CHIP_GLADIUS:
+	  raster_config = 0x2a00161a;
+	  raster_config_1 = 0x0000002e;
+	  break;
    /* 2 SEs / 8 RBs */
    case CHIP_TAHITI:
    case CHIP_PITCAIRN:

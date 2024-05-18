@@ -556,7 +556,7 @@ radv_process_color_image(struct radv_cmd_buffer *cmd_buffer, struct radv_image *
    switch (op) {
    case FAST_CLEAR_ELIMINATE:
       pipeline = &device->meta_state.fast_clear_flush.cmask_eliminate_pipeline;
-      pred_offset = image->fce_pred_offset;
+      pred_offset = 0;
       break;
    case FMASK_DECOMPRESS:
       pipeline = &device->meta_state.fast_clear_flush.fmask_decompress_pipeline;
